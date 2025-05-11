@@ -32,7 +32,7 @@ export default function GameComponent (){
 
   //const [activePlayerSymbol,setActivePlayerSymbol] = useState('X');
   const [gameTurns,setGameTurns] = useState([]);
-  const [playerNames,setPlayerNames ] = useState(["max1","max2"]);
+  const [playerNames,setPlayerNames ] = useState(["Player 1","Player 2"]);
   
   function handlePlayerNames(event,symbol){
       const newPlayerNames = [...playerNames];
