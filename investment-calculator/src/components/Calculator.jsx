@@ -46,7 +46,8 @@ export default function Calculator({updateLog}){
     const newFields = {...fields};
     newFields[key] = value;
     setFields(newFields);
-       
+
+// if we want that investment calculation only happen when all fields have valid value ....
 // const allValid = Object.values(newFields).every(val => val && Number(val) > 0);
 // if (allValid) {
               
