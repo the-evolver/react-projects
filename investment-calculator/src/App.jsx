@@ -15,7 +15,15 @@ function App() {
       <Header/>
        <main>
         <Calculator  updateLog={handleLogs}></Calculator>
-        <Logs allLogs={logs}></Logs>
+        {
+          logs.length > 0 
+          ? <Logs allLogs={logs}></Logs>
+          : <div className="info-container">
+             <p className="info-message">
+            ⚠️ Please fill in <strong>all fields</strong> with valid data to continue.
+             </p>
+           </div>
+        }
        </main>
     </>
   );
