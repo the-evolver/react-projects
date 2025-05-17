@@ -128,3 +128,45 @@ right way => setIsSelected((anyName) => !anyName) [ react guarentes to provide l
 Update Object state Immutably => Objects and arrays(type of object only) are reference value in JavaScript so we should not mutate them directly insteam should create a deep copy first make change in the copy ...
 
 State lifting up => lets say i have two un realted components A and B and both need a access to same information(ex. activePlayer , currHealth) then what we can do is go to the closest ancestor of both A & B and have the required information as state in the parent and pass to both a and b ... in this way same information is managed by seprate component....
+
+
+Styling in react 
+-----------------
+
+-> using vanilla css we can style react components ... 
+   Advantage : - Css code is decoupled from jsx code 
+                 (matlab jsx ka code aur css ka code ek jagah nhi hai )
+               
+   Disadvantage : - You need to know css ( what a logic 🙀🙀🙀 )
+                  - Css code is not scoped to components... 
+                    css rules may clash accross components
+                    (ex. same css class name used in different component 
+                    for different purpose...)
+
+-> Inline styling in react => through Inline styling we can achieve scoped style 
+                             behaviour...
+    Advantage : Style only effect the element to which we add them
+                Dynamic (condintional) styling is simpile
+                (ex .. <p style={{"background-color":isValid ? 'red':'yellow'}}>)
+
+    DisAdvantage : No sepration between css and jsx code ...(css jsx code is coupled)
+                   if styling using inline styles then the css reducancy becomes large as we 
+                   need to style for every element individually
+    ex .. <p style={
+              {
+              color:'red',
+              'text-align':"left"
+              }
+            }
+
+            ==> these styles will be only applied to the this para tag ....
+
+Here comes CSS MODULES in picture ....
+
+CSS Modules = Vanila css with file-specific scoping , css module is an approcah solution that needs to be implemented/inforced by the build process that is used in your react project... it is not a default browser or JavaScript feature ...
+
+Working of css module => ye hmare css files me jo classNames hain unko unique class names me convert kr deta hai so no chance of collision .... works as scoping hogya ho ...
+
+Important => CSS Modules are scoped only for class selectors... matlab iss way se sirf classes ke through hin scoped styling achieve hogi (not for ids tags..). 
+
+![Alt text](Screenshot 2025-05-16 at 5.04.31 PM.png)
